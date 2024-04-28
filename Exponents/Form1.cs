@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 /**************************************
- * Name:
- * Date:
+ * Name: Zulisa Rodriguez
+ * Date: 04/28/2024
  * Description: A program using user-created method
  *              for the math function Square and Cube
  * Assistance:
@@ -42,16 +42,33 @@ namespace Exponents
             // set the output to visible
 
             // turn the Go button off
+            if (int.TryParse(xInputTextBox.Text, out int number))
+            {
+                // PROCESS
+                int squaredNumber = Square(number);
+                int cubedNumber = Cube(number);
+
+                // OUTPUT
+                xOutputLabel.Text = $"Square: {squaredNumber}, Cube: {cubedNumber}";
+                xOutputLabel.Visible = true;
+
+                // turn the Go button off
+                xGoButton.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid integer.");
+            }
         }
 
         public int Square(int num)
         {
-            // we will create this code in class
+           
         }
 
         public int Cube(int num)
         {
-            // we will create this code in class
+            
         }
 
         private void xResetButton_Click(object sender, EventArgs e)
@@ -59,6 +76,7 @@ namespace Exponents
             // the input and output text should be emptied
             // turn the output to invisible
             // turn the Go button back on
+            
         }
 
     }
