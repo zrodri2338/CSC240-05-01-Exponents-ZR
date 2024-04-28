@@ -63,12 +63,12 @@ namespace Exponents
 
         public int Square(int num)
         {
-           
+            return num * num;
         }
 
         public int Cube(int num)
         {
-            
+            return num * num * num;
         }
 
         private void xResetButton_Click(object sender, EventArgs e)
@@ -76,7 +76,10 @@ namespace Exponents
             // the input and output text should be emptied
             // turn the output to invisible
             // turn the Go button back on
-            
+            xInputTextBox.Text = "";
+            xOutputLabel.Text = "";
+            xOutputLabel.Visible = false;
+            xGoButton.Enabled = true;
         }
 
     }
